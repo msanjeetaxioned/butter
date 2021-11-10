@@ -1,0 +1,268 @@
+/* Common CSS */
+* { box-sizing: border-box; }
+body { font-family: Helvetica, sans-serif; }
+
+a { 
+    color: unset;
+    text-decoration: none; 
+}
+
+figure > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.display-none { display: none; }
+
+/* Butter Main CSS */
+#butter-main {
+    width: 304px;
+    height: 604px;
+    border: 2px solid black;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    top: 70px;
+    background-image: url("/data/assets/bg.jpg");
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+#logo {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@keyframes table {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#table {
+    position: absolute;
+    z-index: 2;
+    bottom: -40px;
+    left: 0;
+    animation-name: table;
+    animation-duration: 2s;
+}
+
+@keyframes plate {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    15% {
+        left: -40px;
+        opacity: 1;
+    }
+    100% {
+        left: -40px;
+        opacity: 1;
+    }
+}
+
+#plate {
+    position: absolute;
+    z-index: 3;
+    bottom: -20px;
+    left: -500px;
+    animation-name: plate;
+    animation-delay: 2s;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+
+@keyframes boring-sandwich {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    15% {
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    100% {
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+#boring-sandwich {
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: -500px;
+    color: rgba(220, 38, 42, 1);
+    font-size: 46px;
+    text-align: center;
+    animation-name: boring-sandwich;
+    animation-delay: 2.2s;
+    animation-duration: 1.6s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+
+@keyframes sad-sonali {
+    0% {
+        right: -500px;
+        opacity: 0;
+    }
+    15% {
+        right: -10px;
+        opacity: 1;
+    }
+    30% {
+        right: 0;
+        opacity: 1;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+#sad-sonali {
+    position: absolute;
+    z-index: 4;
+    right: -500px;
+    bottom: 55px;
+    animation-name: sad-sonali;
+    animation-delay: 2.2s;
+    animation-duration: 1.6s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 2;
+}
+
+@keyframes sandwich-lower-bread-plate {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    10% {
+        left: -40px;
+        opacity: 1;
+    }
+    100% {
+        left: -40px;
+        opacity: 1;
+    }
+}
+
+#sandwich-lower-bread-plate {
+    position: absolute;
+    z-index: 4;
+    left: -500px;
+    bottom: -20px;
+    animation-name: sandwich-lower-bread-plate;
+    animation-delay: 5.2s;
+    animation-duration: 4.4s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+
+@keyframes sandwich-content {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    10% {
+        left: 0;
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+#sandwich-content {
+    position: absolute;
+    z-index: 5;
+    left: -500px;
+    bottom: 3px;
+    animation-name: sandwich-content;
+    animation-delay: 5.2s;
+    animation-duration: 4.4s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+
+@keyframes sandwich-upper-bread {
+    0% {
+        left: -500px;
+        bottom: 15px;
+        opacity: 0;
+    }
+    5% {
+        left: 0;
+        bottom: 15px;
+        opacity: 1;
+    }
+    20% {
+        left: 0;
+        bottom: 15px;
+        opacity: 1;
+    }
+    35% {
+        bottom: 80px;
+    }
+    50% {
+        bottom: 30px;
+    }
+    95% {
+        left: 0;
+        opacity: 1;
+    }
+    100% {
+        left: -500px;
+        opacity: 0;
+    }
+}
+
+#sandwich-upper-bread {
+    position: absolute;
+    z-index: 7;
+    left: -500px;
+    bottom: 30px;
+    animation-name: sandwich-upper-bread;
+    animation-delay: 5.2s;
+    animation-duration: 8.8s;
+}
+
+@keyframes mayo {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    95% {
+        left: 0;
+        opacity: 1;
+    }
+    100% {
+        left: -500px;
+        opacity: 0;
+    }
+}
+
+#mayo {
+    position: absolute;
+    z-index: 6;
+    left: -500px;
+    bottom: 20px;
+    animation-name: mayo;
+    animation-delay: 7.4s;
+    animation-duration: 6.6s;
+    opacity: 1;
+}
