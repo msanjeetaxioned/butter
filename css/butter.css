@@ -1,6 +1,6 @@
 /* Common CSS */
 * { box-sizing: border-box; }
-body { font-family: Helvetica, sans-serif; }
+body { font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif }
 
 a { 
     color: unset;
@@ -8,9 +8,41 @@ a {
 }
 
 figure > img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
+}
+
+h1 {
+    position: absolute;
+    z-index: 4;
+    top: 175px;
+    left: -500px;
+    color: rgba(220, 38, 42, 1);
+    font-size: 32px;
+    opacity: 0;
+    text-align: center;
+    text-transform: capitalize;
+    animation-name: slideInFromLeftTo50Percent, stay, slideOutLeft;
+    animation-duration: 0.2s, 2.2s, 0.2s;
+    animation-fill-mode: forwards;
+}
+
+h1 > span {
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.photo-slide-from-right {
+    position: absolute;
+    z-index: 4;
+    right: -500px;
+    bottom: 55px;
+    opacity: 0;
+    animation-name: slideInFromRight, easeIn, stay, slideOutRight;
+    animation-duration: 0.2s, 0.5s, 1.7s, 0.2s;
+    animation-fill-mode: forwards;
 }
 
 .display-none { display: none; }
@@ -42,28 +74,130 @@ figure > img {
     to { opacity: 1; }
 }
 
+@keyframes slideInFromLeft40px {
+    to {
+        left: -40px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeftTo0px {
+    to {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeftTo50Percent {
+    to {
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeftAndTop {
+    to {
+        left: 100px;
+        top: 260px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideButtonInFromLeftAndTop {
+    to {
+        top: 270px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes bringHatDown { 
+    to {
+        top: 350px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    to {
+        right: -10px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRightToCenter { 
+    to {
+        right: 93px;
+        opacity: 1;
+    }
+}
+
+@keyframes easeIn { 
+    to {
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn { 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut { 
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes stay {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+    to {
+        left: -500px;
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutRight {
+    to {
+        right: -500px;
+        opacity: 0;
+    }
+}
+
+@keyframes sandwichTransitionTop {
+    to {
+        bottom: 80px;
+    }
+}
+
+@keyframes sandwichTransitionDown {
+    to {
+        bottom: 30px;
+    }
+}
+
+@keyframes moveKnife {
+    to {
+        left: 120px;
+    }
+}
+
 #table {
     position: absolute;
     z-index: 2;
     bottom: -40px;
     left: 0;
     animation-name: table;
-    animation-duration: 2s;
-}
-
-@keyframes plate {
-    0% {
-        left: -500px;
-        opacity: 0;
-    }
-    15% {
-        left: -40px;
-        opacity: 1;
-    }
-    100% {
-        left: -40px;
-        opacity: 1;
-    }
+    animation-duration: 1.5s;
 }
 
 #plate {
@@ -71,90 +205,22 @@ figure > img {
     z-index: 3;
     bottom: -20px;
     left: -500px;
-    animation-name: plate;
-    animation-delay: 2s;
-    animation-duration: 1.5s;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-}
-
-@keyframes boring-sandwich {
-    0% {
-        left: -500px;
-        opacity: 0;
-    }
-    15% {
-        left: 50%;
-        transform: translate(-50%, 0);
-        opacity: 1;
-    }
-    100% {
-        left: 50%;
-        transform: translate(-50%, 0);
-        opacity: 1;
-    }
+    opacity: 0;
+    animation-name: slideInFromLeft40px, stay, slideOutLeft;
+    animation-delay: 2s, 2.2s, 4.8s;
+    animation-duration: 0.2s, 2.8s, 0.2s;
+    animation-fill-mode: forwards;
 }
 
 #boring-sandwich {
     width: 200px;
-    position: absolute;
-    top: 175px;
-    left: -500px;
-    color: rgba(220, 38, 42, 1);
-    font-size: 46px;
-    text-align: center;
-    animation-name: boring-sandwich;
-    animation-delay: 2.2s;
-    animation-duration: 1.6s;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-}
-
-@keyframes sad-sonali {
-    0% {
-        right: -500px;
-        opacity: 0;
-    }
-    15% {
-        right: -10px;
-        opacity: 1;
-    }
-    30% {
-        right: 0;
-        opacity: 1;
-    }
-    100% {
-        right: 0;
-        opacity: 1;
-    }
+    animation-delay: 2.2s, 2.4s, 5.2s;
+    animation-duration: 0.2s, 2.8s, 0.2s;
 }
 
 #sad-sonali {
-    position: absolute;
-    z-index: 4;
-    right: -500px;
-    bottom: 55px;
-    animation-name: sad-sonali;
-    animation-delay: 2.2s;
-    animation-duration: 1.6s;
-    animation-direction: alternate;
-    animation-timing-function: ease-in;
-    animation-iteration-count: 2;
-}
-
-@keyframes sandwich-lower-bread-plate {
-    0% {
-        left: -500px;
-        opacity: 0;
-    }
-    10% {
-        left: -40px;
-        opacity: 1;
-    }
-    100% {
-        left: -40px;
-        opacity: 1;
-    }
+    animation-delay: 2.2s, 2.4s, 2.9s, 5.2s;
+    animation-duration: 0.2s, 0.5s, 2.3s, 0.2s;
 }
 
 #sandwich-lower-bread-plate {
@@ -162,26 +228,11 @@ figure > img {
     z-index: 4;
     left: -500px;
     bottom: -20px;
-    animation-name: sandwich-lower-bread-plate;
-    animation-delay: 5.2s;
-    animation-duration: 4.4s;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-}
-
-@keyframes sandwich-content {
-    0% {
-        left: -500px;
-        opacity: 0;
-    }
-    10% {
-        left: 0;
-        opacity: 1;
-    }
-    100% {
-        left: 0;
-        opacity: 1;
-    }
+    opacity: 0;
+    animation-name: slideInFromLeft40px, stay, slideOutLeft;
+    animation-delay: 5.2s, 5.4s, 13.8s;
+    animation-duration: 0.2s, 8.4s, 0.2s;
+    animation-fill-mode: forwards;
 }
 
 #sandwich-content {
@@ -189,80 +240,103 @@ figure > img {
     z-index: 5;
     left: -500px;
     bottom: 3px;
-    animation-name: sandwich-content;
-    animation-delay: 5.2s;
-    animation-duration: 4.4s;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-}
-
-@keyframes sandwich-upper-bread {
-    0% {
-        left: -500px;
-        bottom: 15px;
-        opacity: 0;
-    }
-    5% {
-        left: 0;
-        bottom: 15px;
-        opacity: 1;
-    }
-    20% {
-        left: 0;
-        bottom: 15px;
-        opacity: 1;
-    }
-    35% {
-        bottom: 80px;
-    }
-    50% {
-        bottom: 30px;
-    }
-    95% {
-        left: 0;
-        opacity: 1;
-    }
-    100% {
-        left: -500px;
-        opacity: 0;
-    }
+    opacity: 0;
+    animation-name: slideInFromLeftTo0px, stay, slideOutLeft;
+    animation-delay: 5.2s, 5.4s, 13.8s;
+    animation-duration: 0.2s, 8.4s, 0.2s;
+    animation-fill-mode: forwards;
 }
 
 #sandwich-upper-bread {
     position: absolute;
     z-index: 7;
     left: -500px;
-    bottom: 30px;
-    animation-name: sandwich-upper-bread;
-    animation-delay: 5.2s;
-    animation-duration: 8.8s;
-}
-
-@keyframes mayo {
-    0% {
-        left: 0;
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    95% {
-        left: 0;
-        opacity: 1;
-    }
-    100% {
-        left: -500px;
-        opacity: 0;
-    }
+    bottom: 15px;
+    opacity: 0;
+    animation-name: slideInFromLeftTo0px, stay, sandwichTransitionTop, sandwichTransitionDown, stay, slideOutLeft;
+    animation-delay: 5.2s, 5.4s, 5.9s, 7.4s, 8.9s, 13.8s;
+    animation-duration: 0.2s, 0.5s, 1.5s, 1.5s, 4.9s, 0.2s;
+    animation-fill-mode: forwards;
 }
 
 #mayo {
     position: absolute;
     z-index: 6;
-    left: -500px;
+    left: 0;
     bottom: 20px;
-    animation-name: mayo;
-    animation-delay: 7.4s;
-    animation-duration: 6.6s;
-    opacity: 1;
+    opacity: 0;
+    animation-name: fadeIn, stay, slideOutLeft;
+    animation-delay: 6.4s, 6.8s, 13.8s;
+    animation-duration: 0.4s, 7s, 0.2s;
+    animation-fill-mode: forwards;
 }
+
+#knife {
+    position: absolute;
+    z-index: 8;
+    left: 10px;
+    bottom: 35px;
+    opacity: 0;
+    animation-name: fadeIn, moveKnife, fadeOut;
+    animation-delay: 6.2s, 6.4s, 7s;
+    animation-duration: 0.2s, 0.5s, 0.1s;
+    animation-fill-mode: forwards;
+}
+
+#knife > img { transform: rotate(-60deg); }
+#ban-gaya { animation-delay: 8.8s, 9s, 11.2s; }
+#happy-sonali { animation-delay: 8.8s, 9s, 9.5s, 11.2s; }
+#fun-food { animation-delay: 11.4s, 11.6s, 13.8s; }
+#chef { animation-delay: 11.4s, 11.6s, 12.1s, 13.8s; }
+
+#food-magic {
+    animation-name: slideInFromLeftTo50Percent, stay;
+    animation-delay: 14s, 14.2s;
+    animation-duration: 0.2s, 2.2s;
+}
+
+#veg-mayo {
+    bottom: -16px;
+    animation-name: slideInFromRightToCenter, stay;
+    animation-delay: 14s, 14.2s;
+    animation-duration: 0.2s, 2.2s;
+}
+
+#hat {
+    position: absolute;
+    z-index: 5;
+    top: -500px;
+    left: -500px;
+    opacity: 0;
+    animation-name: slideInFromLeftAndTop, stay, bringHatDown;
+    animation-delay: 14.1s, 14.5s, 14.6s;
+    animation-duration: 0.4s, 0.1s, 1s;
+    animation-timing-function: ease, ease, ease-in;
+    animation-fill-mode: forwards;
+}
+
+#get-recipe-button {
+    position: absolute;
+    z-index: 6;
+    top: -500px;
+    left: -500px;
+    opacity: 0;
+    animation-name: slideButtonInFromLeftAndTop, stay;
+    animation-delay: 15.6s, 16.1s;
+    animation-duration: 0.5s, 0.1s;
+    animation-timing-function: ease, ease;
+    animation-fill-mode: forwards;
+}
+
+#get-recipe-button > a {
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    background: rgba(61, 41, 135, 1);
+    color: #fff;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: color 1s ease-in-out;
+}
+
+#get-recipe-button > a:hover { color: rgba(220, 38, 42, 1); }
